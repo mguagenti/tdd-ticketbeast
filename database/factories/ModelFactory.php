@@ -3,6 +3,9 @@
 use Faker\Generator as Faker;
 use Carbon\Carbon;
 
+/**
+ * Create a concert with a date two weeks in the future.
+ */
 $factory->define(App\Concert::class, function (Faker $faker) {
     return [
         'title'                     => 'Example Band',
@@ -18,12 +21,18 @@ $factory->define(App\Concert::class, function (Faker $faker) {
     ];
 });
 
+/**
+ * Create a concert that was published a week ago from this day.
+ */
 $factory->state(App\Concert::class, 'published', function (Faker $faker) {
     return [
         'published_at' => Carbon::parse('-1 week')
     ];
 });
 
+/**
+ * Create a concert with an unpublished status.
+ */
 $factory->state(App\Concert::class, 'unpublished', function (Faker $faker) {
     return [
         'published_at' => null

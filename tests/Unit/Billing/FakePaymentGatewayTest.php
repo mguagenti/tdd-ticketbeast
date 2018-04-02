@@ -33,5 +33,10 @@ class FakePaymentGatewayTest extends TestCase {
         $this->fail();
     }
 
+    /** @test */
+    function running_a_hook_before_the_first_charge() {
+        
+    }
+
 
 }
